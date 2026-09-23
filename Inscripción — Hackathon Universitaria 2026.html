@@ -140,7 +140,8 @@
        usando el método que NO expone los datos en la URL.
        ============================================================ -->
   <form action="https://e-aulas.urosario.edu.co/pluginfile.php/3824980/mod_resource/content/0/procesar-inscripcion.php"
-    method="post">
+    method="post" enctype="multipart/form-data">
+
 
     <!-- ========================================================
          BLOQUE 1 — DATOS PERSONALES  (ya resuelto: es tu modelo)
@@ -247,8 +248,20 @@
              · envuelve el grupo en <div class="inline"> ... </div>
            --------------------------------------------------------- -->
       <div class="todo">TODO 5 · radios con name compartido</div>
-      <label for="portafolio">Nivel de experiencia:</label>
-      <input type="radio" id="portafolio" name="portafolio" placeholder="https://...">
+      <label for="portafolio">Nivel de experiencia: *</label>
+      <div class="inline">
+        <label for="nivel-basico">Nivel de experiencia:</label>
+
+        <input type="radio" id="nivel-basico" name="nivel" value="basico" required checked>
+        <label for="nivel-basico">Básico</label>
+
+        <input type="radio" id="nivel-intermedio" name="nivel" value="intermedio">
+        <label for="nivel-intermedio">Intermedio</label>
+
+        <input type="radio" id="nivel-avanzado" name="nivel" value="avanzado">
+        <label for="nivel-avanzado">Avanzado</label>
+      </div>
+
 
       <!-- TODO 6 --------------------------------------------------
            Casillas de verificación "Tecnologías que dominas":
@@ -260,6 +273,21 @@
              · envuelve el grupo en <div class="inline"> ... </div>
            --------------------------------------------------------- -->
       <div class="todo">TODO 6 · checkboxes múltiples</div>
+      <div class="inline">
+        <label>Tecnologías que dominas:</label>
+
+        <input type="checkbox" id="html" name="tecnologias" value="html">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="tecnologias" value="css">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="javascript" name="tecnologias" value="javascript">
+        <label for="javascript">JavaScript</label>
+
+        <input type="checkbox" id="python" name="tecnologias" value="python">
+        <label for="python">Python</label>
+      </div>
 
 
       <!-- TODO 7 --------------------------------------------------
@@ -269,9 +297,11 @@
              · valor inicial 10, obligatorio
            --------------------------------------------------------- -->
       <div class="todo">TODO 7 · type number con min/max/step</div>
+
+      <label for="horas">Horas semanales disponibles:</label>
+      <input type="number" id="horas" name="horas" min="5" max="40" step="5" value="10" required>
+
     </fieldset>
-
-
     <!-- ========================================================
          BLOQUE 4 — MATERIALES Y COMENTARIOS
          ======================================================== -->
@@ -287,6 +317,8 @@
            enctype="multipart/form-data"  -> agrégalo en el TODO 0.
            --------------------------------------------------------- -->
       <div class="todo">TODO 8 · type file con accept</div>
+      <label for="hojavida">Hoja de vida (PDF):</label>
+      <input type="file" id="hojavida" name="hojavida" accept=".pdf">
 
 
       <!-- TODO 9 --------------------------------------------------
@@ -298,6 +330,9 @@
              · placeholder libre
            --------------------------------------------------------- -->
       <div class="todo">TODO 9 · textarea</div>
+      <label for="motivacion">¿Por qué quieres participar?</label>
+      <textarea id="motivacion" name="motivacion" rows="4" maxlength="300"
+        placeholder="Describe tu motivación para participar en el hackathon." required></textarea>
 
 
       <!-- TODO 10 -------------------------------------------------
@@ -307,6 +342,12 @@
              · label: "Acepto el tratamiento de mis datos personales *"
            --------------------------------------------------------- -->
       <div class="todo">TODO 10 · checkbox obligatorio de términos</div>
+      <div class="inline">
+        <input type="checkbox" id="terminos" name="terminos" required>
+        <label for="terminos">Acepto el tratamiento de mis datos personales *</label>
+      </div>
+
+
     </fieldset>
 
 
@@ -317,11 +358,10 @@
          (usa la etiqueta <button> con el type correcto en cada caso)
          ------------------------------------------------------------- -->
     <div class="todo">TODO 11 · botones submit y reset</div>
+    <button type="submit">Enviar inscripción</button>
+    <button type="reset">Borrar</button>
 
     <!-- TODO 0 (cierre) — falta la etiqueta de cierre del formulario -->
-
-
-
   </form>
 </body>
 

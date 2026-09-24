@@ -1,4 +1,14 @@
-body {
-  background-image: url("C:/Users/prestamour/Documents/Quack/Imagenes/images.jpg");
-  background-repeat: repeat;
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #b98d85;
+}
+
+h1,p{
+  background-color: beige;
+  color: #387638
 }

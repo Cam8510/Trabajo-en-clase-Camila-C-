@@ -19,3 +19,8 @@ etiqueta style
 </body>
 
 3. externa (hoja de estilos)
+
+selector1,selector2,selectorn{
+    propiedad1:valor;
+    propiedad2:valor;
+}

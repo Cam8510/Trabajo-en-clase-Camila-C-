@@ -9,12 +9,12 @@
   background-color: #15A085;
   margin: 50px auto;
   border: 5px dashed #FCFC34;
-  padding: 40px 50px 80px 40px;
 }
 .esopo h1{
   font-size:30px;
   color: #FFFFFF;
   line-height: 1.7;
+    padding: 40px 50px 80px 40px;
 }
 .esopo img {
   width: 150px;
@@ -29,6 +29,9 @@
   font-size: 20px;
   color: #FFFFFF;
   line-height: 1.7;
+  margin-left: 40px;
+  padding: 30px;
+  padding: 40px 50px 80px 40px;
 }
 
 .homero {

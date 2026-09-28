@@ -95,15 +95,6 @@ section p {
     font-weight: bold;
 }
 
-.boton:hover {
-    background-color: #3f2618;
-    transform: translateY(-3px);
-}
-
-.boton:active {
-    transform: translateY(0);
-}
-
 .contenido {
     margin-bottom: 25px;
 }

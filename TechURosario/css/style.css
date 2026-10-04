@@ -1,4 +1,49 @@
-body {
-  background-image: url("C:/Users/prestamour/Documents/Quack/Imagenes/images.jpg");
-  background-repeat: repeat;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.esopo {
+  width: 95%;
+  background-color: #15A085;
+  margin: 50px auto;
+  border: 5px dashed #FCFC34;
+}
+.esopo h1{
+  font-size:30px;
+  color: #FFFFFF;
+  line-height: 1.7;
+    padding: 40px 50px 80px 40px;
+}
+.esopo img {
+  width: 150px;
+  float: left;
+  margin-right: 20px;
+  margin: 5px auto 10px;
+}
+
+
+.esopo p {
+  width: 1700px;
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 1.7;
+  margin-left: 40px;
+  padding: 30px;
+  padding: 40px 50px 80px 40px;
+}
+
+.homero {
+  font-style: italic;
+  color: #f9fd42;
+  text-decoration: underline;
+}
+
+h2 {
+  color: #387638;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  font-style: oblique;
 }

@@ -8,28 +8,81 @@ body {
     background-color: #f4f1ea;
     color: #2b2b2b;
     line-height: 1.7;
+
+    /* Animación de aparición */
+    animation: aparecer 1s ease-in;
 }
 
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bajar {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 header {
-    background:  #4b2e14;
+    background: #4b2e14;
     color: white;
     text-align: center;
     padding: 35px 20px;
+
+    animation: bajar 0.8s ease-out;
 }
 
 header h1 {
     margin: 0;
     font-size: 42px;
     letter-spacing: 1px;
+
+    animation: zoom 1s ease-out;
 }
 
 header p {
     margin: 5px 0 0;
     font-size: 18px;
     font-style: italic;
-}
 
+    animation: aparecer 1.5s ease-in;
+}
 
 main {
     width: 90%;
@@ -37,11 +90,19 @@ main {
     margin: 40px auto;
 }
 
-
 section {
     background-color: white;
     padding: 35px;
     margin-bottom: 30px;
+
+    animation: subir 0.8s ease-out;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 section h2 {
@@ -54,7 +115,6 @@ section p {
     margin-bottom: 20px;
 }
 
-
 .introduccion {
     margin-bottom: 35px;
 }
@@ -65,6 +125,14 @@ section p {
     width: 400px;
     height: auto;
     margin: 25px auto 10px;
+
+    animation: zoom 1s ease-out;
+
+    transition: transform 0.4s ease;
+}
+
+.introduccion img:hover {
+    transform: scale(1.05);
 }
 
 .menu {
@@ -84,7 +152,6 @@ section p {
     margin-top: 25px;
 }
 
-
 .boton {
     display: inline-block;
     background-color: #6b4226;
@@ -92,6 +159,23 @@ section p {
     text-decoration: none;
     padding: 13px 24px;
     font-weight: bold;
+
+    transition:
+        transform 0.4s ease,
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.boton:hover {
+    background-color: #4b2e14;
+
+    transform: rotateY(15deg) rotateX(5deg) scale(1.08);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.boton:active {
+    transform: scale(0.95);
 }
 
 .contenido {
@@ -107,8 +191,18 @@ section p {
     max-width: 100%;
     height: auto;
     margin: 20px auto;
+
+    animation: subir 0.9s ease-out;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
 }
 
+.contenido img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
 .espacio {
     margin: 30px auto;
@@ -124,9 +218,26 @@ section p {
     max-width: 100%;
     width: 500px;
     height: auto;
+
+    animation: zoom 1s ease-out;
+
+    transition: transform 0.5s ease;
+}
+
+.espacio img:hover {
+    transform: scale(1.06);
 }
 
 .volver {
     margin-top: 5px;
     margin-bottom: 30px;
+}
+
+.volver a {
+    transition: all 0.3s ease;
+}
+
+.volver a:hover {
+    letter-spacing: 1px;
+    transform: translateX(-5px);
 }

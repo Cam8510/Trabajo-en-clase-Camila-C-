@@ -9,7 +9,6 @@ body {
     color: #2b2b2b;
     line-height: 1.7;
 
-    /* Animación de aparición */
     animation: aparecer 1s ease-in;
 }
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<body background="Imagenes/quack.jpg">
+    <h1>Contact form</h1>
+    Please fill in your information and we'll be sending your order in no time<br><br>
+
+    <form name="formulario" action="" method="post" autocomplete="off" target="_blank">
+        <label for="Nombre">Your name:</label>
+        <input type="text" id="Nombre" name="Nombre" placeholder="First Name"> <input type="text" id="Apellido" name="Apellido" required placeholder="Last Name"><br><br>
+        <label for="correo">Your Email:</label>
+        <input type="email" id="correo" name="correo" placeholder="e.g.hello@contact.net"><br><br>
+
+        <label for="Celular">Phone:</label>
+        <input type="text" id="Celular" name="Celular" required placeholder="###"> <input type="text" id="Celular" name="Celular" required placeholder="###"> <input type="text" id="Celular" name="Celular" required placeholder="###"><br><br>
+        
+        <label for="sujeto">Message subject:</label>
+        <select name="sujeto">
+        <option selected value="0"> Other </option>
+        <option value="1">a/option>
+        <option value="2">a</option>
+        <option value="2">a</option>
+        </select><br><br>
+
+        <label for="mensaje">Message:</label>
+        <textarea rows = "3" cols="60" name = "observaciones"></textarea><br><br>
+        <label for="verificacion">Verification:</label>
+        <input type="checkbox" id="captcha" name="captcha" >
+        <label for="captcha">I'm not a robot</label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-mL9f5a870qunSO6C-hCQIHu2xX_DsLsVWjsUxXVbhA&s" height="32" width="32"><br><br>
+        <input type="submit" value="SUBMIT FORM">
+    </form>
+</body>

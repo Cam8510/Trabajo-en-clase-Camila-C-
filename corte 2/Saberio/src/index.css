@@ -1,195 +1,331 @@
-/* ==========================================================================
-   ESTILOS GLOBALES — Café Andino
-   Convención de nombres: bloque__elemento--modificador (BEM simplificado).
-   Cada componente tiene además su propio archivo .css.
-   ========================================================================== */
-
-/* ---------- Variables de diseño: se definen una vez y se reutilizan ---------- */
+* {
+  box-sizing: border-box
+}
 
 :root {
-  /* Colores principales */
-  --color-oscuro: #1D2154;
-  --color-suave: #6564D5;
-  --color-acento: #0a0c34;
-  --color-acento-suave: #FFF0C2;
-
-  /* Fondos */
-  --color-claro: #F7F6FF;
-  --color-superficie: #FFFFFF;
-  --color-borde: #E6E2F3;
-
-  /* Texto */
-  --color-texto: #25264F;
-  --color-texto-suave: #777895;
-
-  /* Estados */
-  --color-exito: #15803D;
-  --color-exito-suave: #DDF5E7;
-
-  --color-advertencia: #927016;
-  --color-advertencia-suave: #F8EDCC;
-
-  --color-peligro: #B91C1C;
-  --color-peligro-suave: #FEE2E2;
-
-  /* Diseño */
-  --radio: 20px;
-  --sombra: 0 2px 8px rgb(29 33 84 / 0.04);
-}
-
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  min-height: 100%;
+  --azul: #1d2154;
+  --morado: #6564d5;
+  --fondo: #f7f7fb;
+  --texto: #292a3a;
+  --suave: #77788a
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.5;
-  color: var(--color-texto);
-  background-color: var(--color-claro);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--fondo)
 }
 
-#root {
-  min-height: 100vh;
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+.header {
+  min-height: 68px;
+  padding: 10px 5%;
+  background: var(--azul);
+  color: white;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 35px
 }
 
-main {
-  flex: 1;
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 21px
 }
 
-/* ---------- Botones (reutilizables en cualquier componente) ---------- */
+.marca img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1
+}
+
+nav a {
+  padding: 10px 13px;
+  border-radius: 22px;
+  color: #e9e9f5;
+  font-size: 14px
+}
+
+nav a:hover,
+nav a.activo {
+  background: #414574;
+  color: white
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 18px
+}
+
+.usuario>a:first-child {
+  font-size: 23px
+}
+
+.perfil {
+  padding: 9px 15px;
+  border: 1px solid #7779a1;
+  border-radius: 22px;
+  font-size: 14px
+}
+
+.contenido {
+  width: min(1100px, 90%);
+  margin: 35px auto 55px
+}
+
+.bienvenida {
+  background: white;
+  border-radius: 18px;
+  padding: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 15px #20204a0b
+}
+
+small {
+  color: var(--morado);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.3px
+}
+
+h1 {
+  max-width: 570px;
+  margin: 12px 0;
+  color: var(--azul);
+  font-size: clamp(28px, 4vw, 39px)
+}
+
+.bienvenida p,
+.ayuda p {
+  color: var(--suave);
+  line-height: 1.6
+}
+
 .boton {
   display: inline-block;
-  font: inherit;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  padding: 8px 18px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.15s, transform 0.15s;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border-radius: 9px;
+  background: var(--morado);
+  color: white;
+  font-weight: bold
 }
 
-.boton--primario {
-  background: var(--color-cafe);
-  color: #fff;
+.icono {
+  font-size: 75px;
+  padding: 25px;
+  background: #f0efff;
+  border-radius: 50%
 }
 
-.boton--primario:hover {
-  background: var(--color-oscuro);
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 22px 0 42px
 }
 
-.boton--acento {
-  background: var(--color-acento);
-  color: var(--color-oscuro);
-  padding: 12px 28px;
+.resumen article,
+.tarjeta {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 3px 15px #20204a0b
 }
 
-.boton--acento:hover {
-  transform: scale(1.05);
+.resumen span {
+  display: block;
+  color: var(--suave);
+  font-size: 14px
 }
 
-.boton--secundario {
-  background: #fff;
-  color: var(--color-texto);
-  border-color: #d6c8b6;
+.resumen strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--azul);
+  font-size: 28px
 }
 
-.boton--secundario:hover {
-  background: var(--color-claro);
-}
-
-.boton--peligro {
-  background: #fff;
-  color: var(--color-peligro);
-  border-color: #fca5a5;
-}
-
-.boton--peligro:hover {
-  background: var(--color-peligro-suave);
-}
-
-.boton--pequeno {
-  padding: 4px 12px;
-  font-size: 0.8rem;
-}
-
-.boton-icono {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  border: 1px solid #d6c8b6;
-  background: #fff;
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.boton-icono:hover:not(:disabled) {
-  background: var(--color-acento-suave);
-}
-
-.boton-icono:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* ---------- Campos de formulario ---------- */
-.campo {
+.titulo {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 18px
 }
 
-.campo__etiqueta {
-  font-size: 0.85rem;
-  font-weight: 600;
+h2 {
+  margin: 6px 0;
+  color: var(--azul)
 }
 
-.campo__control {
+input {
+  width: 250px;
+  padding: 12px 14px;
+  border: 1px solid #dedee9;
+  border-radius: 9px;
+  background: white
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px
+}
+
+.persona {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.persona p {
+  margin: 5px 0;
+  color: var(--suave);
+  font-size: 13px
+}
+
+.avatar {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eeedff;
+  color: var(--morado);
+  font-weight: bold
+}
+
+.tarjeta h3 {
+  margin-top: 23px;
+  color: var(--azul)
+}
+
+.horario {
+  color: var(--suave);
+  font-size: 13px
+}
+
+.modalidad {
+  display: inline-block;
+  margin: 5px 0 17px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #edfaf1;
+  color: #237443;
+  font-size: 12px
+}
+
+button {
+  display: block;
   width: 100%;
-  font: inherit;
-  font-size: 0.95rem;
-  padding: 8px 10px;
-  border: 1px solid #d6c8b6;
-  border-radius: 8px;
-  background: #fff;
-  color: inherit;
+  padding: 12px;
+  border: 0;
+  border-radius: 9px;
+  background: #f0efff;
+  color: var(--morado);
+  font-weight: bold;
+  cursor: pointer
 }
 
-.campo__control:focus {
-  outline: 2px solid var(--color-acento-suave);
-  border-color: var(--color-acento);
+.ayuda {
+  margin-top: 28px;
+  padding: 25px;
+  background: #eeedff;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px
 }
 
-.campo__control--error {
-  border-color: var(--color-peligro);
+.ayuda p {
+  margin-bottom: 0
 }
 
-textarea.campo__control {
-  resize: vertical;
+.ayuda a {
+  color: var(--morado);
+  font-weight: bold;
+  white-space: nowrap
 }
 
-.campo__error {
-  color: var(--color-peligro);
-  font-size: 0.8rem;
+footer {
+  padding: 22px 5%;
+  background: var(--azul);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 13px
 }
 
-.campo__ayuda {
-  color: var(--color-texto-suave);
-  font-size: 0.75rem;
-  text-align: right;
+footer div {
+  display: flex;
+  gap: 22px
+}
+
+footer a:hover {
+  color: #c9c8ff
+}
+
+@media(max-width:750px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 12px
+  }
+
+  nav {
+    order: 3;
+    flex-basis: 100%;
+    overflow-x: auto
+  }
+
+  nav a {
+    white-space: nowrap
+  }
+
+  .usuario {
+    margin-left: auto
+  }
+
+  .icono {
+    display: none
+  }
+
+  .resumen,
+  .tarjetas {
+    grid-template-columns: 1fr
+  }
+
+  .titulo,
+  .ayuda,
+  footer {
+    align-items: flex-start;
+    flex-direction: column
+  }
+
+  input {
+    width: 100%
+  }
+
+  footer div {
+    flex-wrap: wrap;
+    gap: 12px
+  }
 }

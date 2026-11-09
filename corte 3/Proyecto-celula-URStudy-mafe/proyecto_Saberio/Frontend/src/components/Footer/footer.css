@@ -1,0 +1,25 @@
+.footer {
+  border-top: 1px solid var(--linea);
+  padding: 28px 0 36px;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+.footer__wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer__links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__links a:hover {
+  color: var(--acento);
+}
